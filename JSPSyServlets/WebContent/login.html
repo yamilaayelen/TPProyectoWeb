@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function carga()
+{
+	document.getElementById("usuario").focus(); //pone el cursor ahi apenas arranca
+}
+
+function validaDatos()
+{
+	var usuario=document.getElementById("usuario");
+	var password=document.getElementById("password");
+	
+	if((usuario.value == "" || usuario.value=='' || usuario.value== null) && 
+	(password.value == "" || password.value=='' || password.value== null))
+		alert("Ingresa tu usuario y password");
+		usuario.focus();
+		return false;
+	else if(usuario.value == "" || usuario.value=='' || usuario.value== null)
+		alert("Ingresa tu usuario");
+		usuario.focus();
+		return false;
+	else if(password.value == "" || password.value=='' || password.value== null)
+		alert("Ingresa tu password");
+		password.focus();
+		return false;
+	
+}
+
+</script>
+
+
+
+</head>
+<body onload="carga();">
+
+<form action="LoginWeb.jr" method="post" onsubmit=" return ValidaDatos();">
+<table>
+<tr>
+<td> Ingresa tu usuario y contraseña</td>
+</tr>
+<tr>
+<td> Usuario:</td>
+<td><input type="text" name="usuario" id="usuario"></td>
+</tr>
+<tr>
+<td> Password:</td>
+<td><input type="password" name="password" id="password"></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" value="ACEPTAR"> <input type="button" value="CANCELAR"></td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>
